@@ -61,8 +61,12 @@ int est_fap_vide(fap f)
 }
 
 void
-detruire_fap(fap f)
-{
-  if (f != NULL)
-      free(f);
+detruire_fap(fap f){
+  if(!f->prochain){
+	f = extraire(f,f->priorite, f->element);
+  }else{
+	f->prochain = f;
+	detruire_fap(f->prochain);
+  }
+	
 }
