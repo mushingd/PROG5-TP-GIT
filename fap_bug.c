@@ -63,6 +63,8 @@ int est_fap_vide(fap f)
 void
 detruire_fap(fap f)
 {
-  if (f != NULL)
-      free(f);
+  int priorite = f->priorite;
+  int element = f->element;
+  while(!est_est_fap_vide(f))
+      f = extraite(f, &element, &priorite);
 }
