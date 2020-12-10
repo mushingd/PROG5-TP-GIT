@@ -39,13 +39,11 @@ fap inserer(fap f, int element, int priorite)
   return f;
 }
   
-fap extraire(fap f, int *element, int *priorite)
-{
+fap extraire(fap f, int *element, int *priorite){
   fap courant;
 
   /* extraire le premier element si la fap n'est pas vide */
-  if (f != NULL)
-    {
+  if (f != NULL){
       courant = f;
       *element = courant->element;
       *priorite = courant->priorite;
