@@ -60,13 +60,10 @@ int est_fap_vide(fap f)
   return f == NULL;
 }
 
-void
-detruire_fap(fap f){
-  if(!f->prochain){
-	f = extraire(f,f->priorite, f->element);
-  }else{
-	f->prochain = f;
-	detruire_fap(f->prochain);
-  }
-	
+detruire_fap(fap f)
+{
+  int priorite = f->priorite;
+  int element = f->element;
+  while(!est_est_fap_vide(f))
+      f = extraite(f, &element, &priorite);
 }
